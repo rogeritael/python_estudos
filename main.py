@@ -85,7 +85,31 @@ class OperatingSystem:
         else:
             print('tipo do arquivo nao definido corretamente ou arquivo nao existe')
 
+    # verifica se a pasta existe
+    def checkFolderExistence(self, folderPath: str):
+        folderExists = os.path.isdir(folderPath)
 
+        if(folderExists):
+            print('pasta existe')
+        else:
+            print('pasta nao existe')
+
+    # verifica se arquivo existe
+    def checkFileExistence(self, filePath: str):
+        fileExists = os.path.isfile(filePath)
+
+        if(fileExists):
+            print('arquivo existe')
+        else:
+            print('arquivo nao existe')
+
+    def checkFileAndFolderExistence(self, fileOrFolderPath: str):
+            fileOrFolderExists = os.path.exists(fileOrFolderPath)
+
+            if(fileOrFolderExists):
+                print('pasta/arquivo existe')
+            else:
+                print('pasta/arquivo nao existe')
 
 system = OperatingSystem()
-system.deleteFile('arquivos/newfolder', 'folder')
+system.checkFileAndFolderExistence('arquivos')
