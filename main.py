@@ -111,5 +111,13 @@ class OperatingSystem:
             else:
                 print('pasta/arquivo nao existe')
 
+    # criaçao de arquivos
+    # w: write -> apaga tudo e reescreve | w+ cria o arquivo se ele nao existr (a ja faz isso por padrao)
+    # a: append -> adiciona ao conteudo ja criado
+    def createFile(self, fileName: str, ):
+        open(fileName, 'w+')
+
+
+
 system = OperatingSystem()
-system.checkFileAndFolderExistence('arquivos')
+system.createFile('abd.py')
